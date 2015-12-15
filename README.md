@@ -5,7 +5,7 @@ Inspired by Apple’s download progress buttons in the app store
 
 # Installation
 ## Cocoapods
-pod 'GBKUIButtonProgressView', git: 'https://github.com/Guidebook/gbkui-button-progress-view'
+`pod 'GBKUIButtonProgressView', git: 'https://github.com/Guidebook/gbkui-button-progress-view'`
 
 ## Manually add to your project
 Just add the two files `GBKUIButtonProgressView.h/m` to your project
