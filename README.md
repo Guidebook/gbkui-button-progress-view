@@ -11,6 +11,9 @@ Inspired by Apple’s download progress buttons in the app store
 Just add the two files `GBKUIButtonProgressView.h/m` to your project
 
 # Usage
+* Create the button as a custom view in your xib, or create it programatically
+* Make sure that you don't have a constraint for it's width (it shrinks)--you might need to set the Intrinsic Content Size to "Placeholder" in your xib to avoid errors
+
 ```objc
 // Add a target (like a regular button)
 [self.downloadButton addTarget:self action:@selector(downloadButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -35,3 +38,8 @@ Just add the two files `GBKUIButtonProgressView.h/m` to your project
   [self.downloadButton setProgress:progress animated:YES];
 }
 ```
+See the example for more info.
+
+# Todos
+* Polish the API a bit
+* Allow it to be IBDesignable
