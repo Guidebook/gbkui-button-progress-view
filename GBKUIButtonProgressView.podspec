@@ -11,4 +11,5 @@ Pod::Spec.new do |spec|
   spec.platform = :ios, '8.0'
   spec.frameworks = 'UIKit'
   spec.source_files = 'GBKUIButtonProgressView/*.{m,h}'
+  spec.resources = ['GBKUIButtonProgressView/*.{png,xib}']
 end
