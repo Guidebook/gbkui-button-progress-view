@@ -8,7 +8,7 @@ Inspired by Apple’s download progress buttons in the app store
 `pod 'GBKUIButtonProgressView', git: 'https://github.com/Guidebook/gbkui-button-progress-view'`
 
 ## Manually add to your project
-Just add the two files `GBKUIButtonProgressView.h/m` to your project
+Just add the files in `GBKUIButtonProgressView/` to your project
 
 # Usage
 * Create the button as a custom view in your xib, or create it programatically
