@@ -40,6 +40,12 @@ Just add the files in `GBKUIButtonProgressView/` to your project
   [self.downloadButton setProgress:progress animated:YES];
 }
 ```
+
+To change the tint color, simply:
+```objc
+self.downloadButton.tintColor = [UIColor redColor];
+```
+
 See the example for more info.
 
 # Todos
