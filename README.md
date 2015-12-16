@@ -17,6 +17,9 @@ Just add the files in `GBKUIButtonProgressView/` to your project
 ![intrinsic content size](https://s3.amazonaws.com/f.cl.ly/items/3r3i1I383h1l1f2f3314/Image%202015-12-15%20at%204.48.08%20PM.png?v=aa7b2b4a)
 
 ```objc
+[self.downloadButton setInitialTitle:@"Download"];
+[self.downloadButton setCompleteTitle:@"Open"];
+
 // Add a target (like a regular button)
 [self.downloadButton addTarget:self action:@selector(downloadButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 
