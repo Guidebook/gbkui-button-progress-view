@@ -54,3 +54,4 @@ See the example for more info.
 # Todos
 * Polish the API a bit
 * Allow it to be IBDesignable
+* Inherit from UIControl instead of UIView
