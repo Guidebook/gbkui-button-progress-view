@@ -21,9 +21,6 @@
                                 <rect key="frame" x="250" y="280" width="100" height="40"/>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.62352941179999999" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.26274509800000001" green="0.62352941179999999" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="nMw-Xp-eQR"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -32,6 +29,9 @@
                             <constraint firstItem="jW6-tc-zix" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gba-1t-9Sp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="downloadButton" destination="jW6-tc-zix" id="ob4-Je-Hv0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

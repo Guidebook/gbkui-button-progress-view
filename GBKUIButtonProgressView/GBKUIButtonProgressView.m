@@ -286,12 +286,14 @@ typedef NS_ENUM(NSInteger, GBKUIButtonProgressState) {
         self.titleLabel.text = [self.completeTitle uppercaseString];
         self.state = GBKUIButtonProgressExpandingToComplete;
         self.disabled = YES;
-        [self animateToButtonWithCompletion:^{
-            if(self.state == GBKUIButtonProgressExpandingToComplete) {
-                self.state = GBKUIButtonProgressCompleted;
-                self.disabled = NO;
-            }
-        }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self animateToButtonWithCompletion:^{
+                if(self.state == GBKUIButtonProgressExpandingToComplete) {
+                    self.state = GBKUIButtonProgressCompleted;
+                    self.disabled = NO;
+                }
+            }];
+        });
         return;
     }
 }
@@ -308,11 +310,13 @@ typedef NS_ENUM(NSInteger, GBKUIButtonProgressState) {
     if(self.state == GBKUIButtonProgressShrinking || self.state == GBKUIButtonProgressProgressing) {
         self.titleLabel.text = [self.initialTitle uppercaseString];
         self.state = GBKUIButtonProgressExpandingToInitial;
-        [self animateToButtonWithCompletion:^{
-            if(self.state == GBKUIButtonProgressExpandingToInitial) {
-                self.state = GBKUIButtonProgressInitial;
-            }
-        }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self animateToButtonWithCompletion:^{
+                if(self.state == GBKUIButtonProgressExpandingToInitial) {
+                    self.state = GBKUIButtonProgressInitial;
+                }
+            }];
+        });
         return;
     }
 }
@@ -335,6 +339,13 @@ typedef NS_ENUM(NSInteger, GBKUIButtonProgressState) {
 -(void)setState:(GBKUIButtonProgressState)state {
     _state = state;
     self.button.enabled = !self.disabled || (state != GBKUIButtonProgressExpandingToInitial && state != GBKUIButtonProgressShrinking && state != GBKUIButtonProgressExpandingToComplete);
+}
+
+-(void)setTintColor:(UIColor *)tintColor {
+    [super setTintColor:tintColor];
+    self.borderView.layer.borderColor = tintColor.CGColor;
+    self.titleLabel.textColor = tintColor;
+    self.pause.tintColor = tintColor;
 }
 
 -(BOOL)isProgressing {
