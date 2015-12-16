@@ -10,7 +10,10 @@
 
 @interface GBKUIButtonProgressView : UIView
 
-@property (assign, nonatomic) BOOL disabled;
+@property (strong, nonatomic) NSString *completeTitle;
+@property (strong, nonatomic) NSString *initialTitle;
+@property (strong, nonatomic) UIFont *font;
+@property (assign, nonatomic, getter=isDisabled) BOOL disabled;
 @property (assign, nonatomic, readonly) CGFloat progress;
 @property (assign, nonatomic, readonly) BOOL isProgressing;
 @property (assign, nonatomic, readonly) BOOL isComplete;
@@ -20,8 +23,6 @@
 - (void)reset;
 - (void)setProgress:(CGFloat)progress animated:(BOOL)animated;
 - (void)setProgress:(CGFloat)progress animated:(BOOL)animated withCompletion:(void(^)())completion;
-- (void)setInitialTitle:(NSString*)title;
-- (void)setCompleteTitle:(NSString*)title;
 - (void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents;
 
 
