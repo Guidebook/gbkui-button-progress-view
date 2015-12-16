@@ -24,8 +24,8 @@
     self.fakeDownloadRequest.maxConcurrentOperationCount = 1;
     
     [self.downloadButton addTarget:self action:@selector(downloadButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self.downloadButton setInitialTitle:@"Download"];
-    [self.downloadButton setCompleteTitle:@"Open"];
+    self.downloadButton.initialTitle = @"Download";
+    self.downloadButton.completeTitle = @"Open";
 }
 
 -(void)downloadButtonPressed:(id)sender {
