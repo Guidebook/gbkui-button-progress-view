@@ -14,7 +14,7 @@ Just add the files in `GBKUIButtonProgressView/` to your project
 
 # Usage
 * Create the button as a custom view in your xib, or create it programatically
-* Make sure that you don't have a constraint for it's width (it shrinks)--you might need to set the Intrinsic Content Size to "Placeholder" in your xib to avoid errors
+* Make sure that you don't have a constraint for its width (it shrinks)--you might need to set the Intrinsic Content Size to "Placeholder" in your xib to avoid errors
 
 ![intrinsic content size](https://s3.amazonaws.com/f.cl.ly/items/3r3i1I383h1l1f2f3314/Image%202015-12-15%20at%204.48.08%20PM.png?v=aa7b2b4a)
 
