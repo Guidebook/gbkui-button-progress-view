@@ -201,8 +201,17 @@ typedef NS_ENUM(NSInteger, GBKUIButtonProgressState) {
 #pragma mark - Public Methods
 
 - (void) setInitialTitle:(NSString*)title {
-    self.titleLabel.text = title.uppercaseString;
+    if(self.state == GBKUIButtonProgressInitial) {
+        self.titleLabel.text = title.uppercaseString;
+    }
     _initialTitle = title;
+}
+
+-(void)setCompleteTitle:(NSString *)completeTitle {
+    if(self.state == GBKUIButtonProgressCompleted) {
+        self.titleLabel.text = completeTitle.uppercaseString;
+    }
+    _completeTitle = completeTitle;
 }
 
 - (void)setFont:(UIFont *)font
