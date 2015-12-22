@@ -1,6 +1,8 @@
 # GBKUIButtonProgressView
 Inspired by Apple’s download progress buttons in the app store
 
+Created by [@pklada](https://twitter.com/pklada) and [@miketsprague](https://twitter.com/miketsprague)
+
 [Checkout the blog post.](http://engineering.guidebook.com/2015/12/15/guidebooks-progress-button-open-sourced/)
 
 ![gif](http://petelada.com/images/plada-loading-button.gif)
