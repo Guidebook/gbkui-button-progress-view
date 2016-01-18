@@ -5,7 +5,7 @@ Created by [@pklada](https://twitter.com/pklada) and [@miketsprague](https://twi
 
 [Checkout the blog post.](http://engineering.guidebook.com/2015/12/15/guidebooks-progress-button-open-sourced/)
 
-![gif](http://petelada.com/images/plada-loading-button.gif)
+![gif](https://media.giphy.com/media/IhTxXLeKu4eAg/giphy.gif)
 
 # Installation
 ## Cocoapods
