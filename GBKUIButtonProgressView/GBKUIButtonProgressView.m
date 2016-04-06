@@ -31,6 +31,7 @@ typedef NS_ENUM(NSInteger, GBKUIButtonProgressState) {
 @property (strong, nonatomic) CAShapeLayer *arc;
 
 @property (nonatomic) float expandDuration;
+@property (strong,nonatomic) UIColor *progressColor;	
 
 // initial -> shrinking -> progressing -> expanding -> completed
 @property (assign, nonatomic) GBKUIButtonProgressState state;
@@ -180,7 +181,7 @@ typedef NS_ENUM(NSInteger, GBKUIButtonProgressState) {
     UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:self.arcContainer.center radius:radius-0.5 startAngle:DEGREES_TO_RADIANS(270) endAngle:DEGREES_TO_RADIANS(269) clockwise:YES];
     self.arc.path = path.CGPath;
     self.arc.fillColor = [UIColor clearColor].CGColor;
-    self.arc.strokeColor = self.tintColor.CGColor;
+    self.arc.strokeColor = self.progressColor.CGColor;
     self.arc.lineWidth = strokeWidth;
     
     self.arc.strokeStart = 0;
@@ -367,6 +368,14 @@ typedef NS_ENUM(NSInteger, GBKUIButtonProgressState) {
     return self.state == GBKUIButtonProgressCompleted || self.state == GBKUIButtonProgressExpandingToComplete;
 }
 
+-(UIColor *)progressColor{
+    
+    if (_progressColor) {
+        return _progressColor;
+    }
+    return self.tintColor;
+}
+
 #pragma mark - Event Handling Notifications
 
 - (IBAction)eventTouchUp:(id)sender {
@@ -391,4 +400,18 @@ typedef NS_ENUM(NSInteger, GBKUIButtonProgressState) {
     [GBKUIButtonAnimations applyTouchDownAnimationForView:self];
 }
 
+#pragma mark - Custom Methods
+
+- (void)setViewWithCustomAttributeDictionary:(NSDictionary *)dict{
+    
+    if (dict[GBKBorderColorAttributeName]) {
+        UIColor *borderColor = dict[GBKBorderColorAttributeName];
+        self.borderView.layer.borderColor = borderColor.CGColor;
+    }
+}
+
+
+- (void)setProgressWithCustomColor:(UIColor *)progressColor{
+    self.progressColor = progressColor;
+}
 @end

@@ -26,6 +26,9 @@
     [self.downloadButton addTarget:self action:@selector(downloadButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     self.downloadButton.initialTitle = @"Download";
     self.downloadButton.completeTitle = @"Open";
+    
+//    [self.downloadButton setProgressWithCustomColor:[UIColor redColor]];
+//    [self.downloadButton setViewWithCustomAttributeDictionary:@{GBKBorderColorAttributeName:[UIColor orangeColor]}];
 }
 
 -(void)downloadButtonPressed:(id)sender {
