@@ -68,7 +68,7 @@ typedef NS_ENUM(NSInteger, GBKUIButtonProgressState) {
 }
 
 - (void)commonInit {
-    UIView *view = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil] firstObject];
+    UIView *view = [[[NSBundle bundleForClass:[self class]] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil] firstObject];
     [view setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];

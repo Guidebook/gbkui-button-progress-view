@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'GBKUIButtonProgressView'
-  spec.version = '0.1.1'
+  spec.version = '0.1.2'
   spec.summary = 'App Store inspired download progress button.'
   spec.description = 'GBKUIButtonProgressView is an easy to use download progress button.'
   spec.homepage = 'https://github.com/Guidebook/gbkui-button-progress-view'
