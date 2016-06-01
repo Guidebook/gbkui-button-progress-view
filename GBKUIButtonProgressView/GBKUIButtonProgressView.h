@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString * const GBKBorderColorAttributeName = @"GBKBorderColorAttributeName";
+static NSString * const GBKProgessColorAttributeName = @"GBKProgessColorAttributeName";
+
 @interface GBKUIButtonProgressView : UIView
 
 @property (strong, nonatomic) NSString *completeTitle;
@@ -25,5 +28,7 @@
 - (void)setProgress:(CGFloat)progress animated:(BOOL)animated withCompletion:(void(^)())completion;
 - (void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents;
 
-
+//custom
+- (void)setViewWithCustomAttributeDictionary:(NSDictionary *)dict;
+- (void)setProgressWithCustomColor:(UIColor *)progressColor;
 @end
